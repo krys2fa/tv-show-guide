@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+import Navbar from './components/NavBar/NavBar';
 
-function App() {
-  return (
-    <div>
-      Hello World!
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="">
+          <Navbar />
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
