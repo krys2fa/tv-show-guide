@@ -1,12 +1,16 @@
 import React from 'react';
-
+import Card from '../Card/Card'
+;
 const CardList = () => (
-
-
 	<div className="row">
 		<div className="col s12 m7">
+			<Card />
+			<Card />
+			<Card />
+      <Card />
+      <Card />
 
-    <div className="section">
+			{/* <div className="section">
 	  <div className="card z-depth-0">
 	    <div className="card-content grey-text text-darken-3">
 	      <span className="card-title">Title</span>
@@ -24,23 +28,6 @@ const CardList = () => (
 	  </div>
 	</div>
 
-  
-			<div className="card">
-				<div className="card-image">
-					<img src="images/sample-1.jpg" alt="" />
-					<span className="card-title">Card Title</span>
-				</div>
-				<div className="card-content">
-					<p>
-						I am a very simple card. I am good at containing small bits of
-						information. I am convenient because I require little markup to use
-						effectively.
-					</p>
-				</div>
-				<div className="card-action">
-					<a href="#">This is a link</a>
-				</div>
-			</div>
 
 			<div className="card">
 				<div className="card-image">
@@ -92,6 +79,23 @@ const CardList = () => (
 					<a href="#">This is a link</a>
 				</div>
 			</div>
+
+			<div className="card">
+				<div className="card-image">
+					<img src="images/sample-1.jpg" alt="" />
+					<span className="card-title">Card Title</span>
+				</div>
+				<div className="card-content">
+					<p>
+						I am a very simple card. I am good at containing small bits of
+						information. I am convenient because I require little markup to use
+						effectively.
+					</p>
+				</div>
+				<div className="card-action">
+					<a href="#">This is a link</a>
+				</div>
+			</div>*/}
 		</div>
 	</div>
 );
