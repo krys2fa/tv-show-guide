@@ -9,9 +9,16 @@ const CardDetails = props => {
         <div className="card-content">
           <span className="card-title">
             Show Title -
-            { id }
+            {id}
           </span>
           <p>Lorem Ipsum</p>
+          <div className="card-image">
+            <img
+              src="http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg"
+              alt=""
+            />
+            <span className="card-title">Card Title</span>
+          </div>
         </div>
 
         <div className="card-action grey lighten-4 grey-text">
