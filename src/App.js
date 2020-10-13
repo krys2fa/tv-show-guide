@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Navbar from './components/NavBar/NavBar';
 import MainPage from './components/MainPage/MainPage';
+import CardDetails from './components/CardDetails/CardDetails';
 
 class App extends Component {
   render() {
@@ -11,7 +12,8 @@ class App extends Component {
         <div className="">
           <Navbar />
           <Switch>
-            <Route path="/" component={MainPage} />
+            <Route exact path="/" component={MainPage} />
+            <Route path="/show/:id" component={CardDetails} />
           </Switch>
         </div>
       </BrowserRouter>
