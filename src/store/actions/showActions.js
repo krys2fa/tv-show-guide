@@ -15,13 +15,12 @@ export const fetchShowsFailure = error => ({
 });
 
 export const fetchShowsStartAsync = () => dispatch => {
+  const apiUrl = 'http://api.tvmaze.com/search/shows?q=girls';
   dispatch(fetchShowsStart());
-  fetch('http://api.tvmaze.com/search/shows?q=girls')
+  fetch(apiUrl)
     .then(res => res.json())
     .then(data => {
-      // console.log('action', data);
       dispatch(fetchShowsSuccess(data));
-      console.log('dispatch(fetchShowsSuccess(data))', dispatch(fetchShowsSuccess(data)));
       return data;
     })
     .catch(error => {
