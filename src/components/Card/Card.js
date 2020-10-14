@@ -4,11 +4,11 @@ const Card = ({ show }) => {
   console.log(show);
   return (
 		// <div className="row">
-		//   <div className="col s12 m7">
+		  <div className="col s12 m4">
 		<div className="card">
 			<div className="card-image">
 				<img
-					src={show.image && show.image.original ? show.image.original : ''}
+					src={show.image && show.image.medium ? show.image.medium : ''}
 					alt=""
 				/>
 			</div>
@@ -24,14 +24,14 @@ const Card = ({ show }) => {
 				<p>{show.schedule.days[0]}</p>
 				{/* <p>{show.url}</p> */}
 				{/* <p>
-					{show.image && show.image.original ? show.image.original : 'testing'}
+					{show.image && show.image.medium ? show.image.medium : 'testing'}
 				</p> */}
 			</div>
 			<div className="card-action">
 				<a href="#">This is a link</a>
 			</div>
 		</div>
-		//   </div>
+		  </div>
 		// </div>
 	);
 };

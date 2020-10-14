@@ -16,7 +16,7 @@ export const fetchShowsFailure = error => ({
 
 export const fetchShowsStartAsync = () => dispatch => {
   dispatch(fetchShowsStart());
-  fetch('http://api.tvmaze.com/search/shows?q=cars')
+  fetch('http://api.tvmaze.com/search/shows?q=girls')
     .then(res => res.json())
     .then(data => {
       // console.log('action', data);

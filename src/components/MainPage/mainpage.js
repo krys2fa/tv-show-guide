@@ -53,14 +53,25 @@ class MainPage extends Component {
 	render() {
 		const { shows, error, pending } = this.props;
     console.log('MainPage -> render -> shows', shows);
+    const fetchedShows = shows.shows;
 
 		// if (!this.shouldComponentRender()) return <LoadingSpinner />;
 
 		return (
-			<div className="product-list-wrapper">
-				{error && <span className="product-list-error">{error}</span>}
-				<CardList shows={shows} />
-			</div>
+			// <div className="show-list-wrapper">
+			// 	{error && <span className="show-list-error">{error}</span>}
+			// 	<CardList ={fetchedShows} />
+			// </div>
+
+      <div className="mainpage">
+	      <div className="row">
+	         {/* <div className="col s12 m4"> */}
+           	{error && <span className="show-list-error">{error}</span>}
+	           <CardList fetchedShows={fetchedShows} />
+	         {/* </div> */}
+
+	       </div>
+	     </div>
 		);
 	}
 }
