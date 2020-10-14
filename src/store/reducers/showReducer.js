@@ -54,6 +54,11 @@ const initialState = {
   ],
 };
 
-const showReducer = (state = initialState, action) => state;
-
+const showReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'GET_SHOW':
+      // console.log('hello');
+  }
+  return state;
+}
 export default showReducer;
