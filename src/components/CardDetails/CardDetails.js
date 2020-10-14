@@ -1,15 +1,15 @@
 import React from 'react';
 
-const CardDetails = props => {
-  console.log(props);
-  const { id } = props.match.params;
+const CardDetails = ({show}) => {
+  console.log(show);
+  // const { id } = props.match.params;
   return (
     <div className="container section">
       <div className="card z-depth-0">
         <div className="card-content">
           <span className="card-title">
             Show Title -
-            {id}
+            {show.name}
           </span>
           <p>Lorem Ipsum</p>
           <div className="card-image">
