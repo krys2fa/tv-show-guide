@@ -1,8 +1,10 @@
+/* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/no-deprecated */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Loader from 'react-loader-spinner';
+import PropTypes from 'prop-types';
 import CardList from '../../components/CardList/CardList';
 import { fetchShowsStartAsync } from '../../store/actions/showActions';
 
@@ -25,7 +27,7 @@ class MainPage extends Component {
   }
 
   render() {
-    const { shows, error, pending } = this.props;
+    const { shows, error } = this.props;
     const fetchedShows = shows.shows;
 
     if (!this.shouldComponentRender()) {
@@ -54,6 +56,13 @@ class MainPage extends Component {
     );
   }
 }
+
+MainPage.propTypes = {
+  fetchShows: PropTypes.func.isRequired,
+  pending: PropTypes.string.isRequired,
+  error: PropTypes.string.isRequired,
+  shows: PropTypes.object.isRequired,
+};
 
 const mapStateToProps = state => ({
   shows: state.shows,
