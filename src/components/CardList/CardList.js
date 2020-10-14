@@ -5,7 +5,8 @@ import Card from '../Card/Card';
 const CardList = ({ shows }) => (
   <div className="row">
     <div className="col s12">
-      {shows && shows[0].map(show => (
+      {console.log('showsings', shows.shows)}
+      {shows.shows && shows.shows.map(show => (
         <Link
           key={show.show.id}
           to={`/show/${show.show.id}`}

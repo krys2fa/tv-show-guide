@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CardDetails = (props) => {
-  console.log(props);
+  // console.log(props);
   const { id, name } = props.match.params;
   return (
 		<div className="container section">
