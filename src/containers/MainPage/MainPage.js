@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Notifications from '../Notifications/Notifications';
+import Loader from 'react-loader-spinner';
 import CardList from '../../components/CardList/CardList';
 import { fetchShowsStartAsync } from '../../store/actions/showActions';
 
@@ -28,7 +28,21 @@ class MainPage extends Component {
     const { shows, error, pending } = this.props;
     const fetchedShows = shows.shows;
 
-    if (!this.shouldComponentRender()) return <LoadingSpinner />;
+    if (!this.shouldComponentRender()) {
+      return (
+        <div
+          style={{
+            width: '100%',
+            height: '100',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <Loader type="ThreeDots" color="#2BAD60" height="100" width="100" />
+        </div>
+      );
+    }
 
     return (
       <div className="mainpage">
