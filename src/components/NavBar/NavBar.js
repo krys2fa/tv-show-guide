@@ -2,15 +2,18 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => (
-  <nav className="">
-    <NavLink to="/" className="logo">
-      TV Show Guide
+  <nav>
+    <NavLink
+      to="/"
+      activeStyle={{
+        marginLeft: '50px',
+        fontSize: '40px',
+        fontWeight: 'bold',
+        fontFamily: 'Dancing Script, cursive',
+      }}
+    >
+      Cars Show Guide
     </NavLink>
-    <ul className="right">
-      <li>
-        <i className="fa fa-user" />
-      </li>
-    </ul>
   </nav>
 );
 
