@@ -6,36 +6,66 @@ const Card = ({ show }) => (
     <div className="card">
       <div className="card-image">
         <img
-          src={show.image && show.image.medium ? show.image.medium : ''}
+          src={ show.image && show.image.medium ? show.image.medium
+						  : 'http://static.tvmaze.com/uploads/images/medium_portrait/203/509996.jpg'
+					}
           alt=""
         />
       </div>
       <div className="card-content">
-        <span className="card-title">{show.name}</span>
-        <span className="card-title">{show.id}</span>
+        <span
+          className="card-title"
+          style={{ fontFamily: 'Dancing Script, cursive', color: '#000' }}
+        >
+          {show.name}
+        </span>
         <p>
-          TYPE:
+          <span
+            style={{ fontFamily: 'Questrial, sans-serif', marginRight: '20px', color: '#000' }}
+          >
+            TYPE:
+          </span>
           {show.type}
         </p>
         <p>
-          STATUS:
+          <span
+            style={{ fontFamily: 'Questrial, sans-serif', marginRight: '20px', color: '#000' }}
+          >
+            STATUS:
+          </span>
           {show.status}
         </p>
         <p>
-          PREMIERED:
+          <span
+            style={{ fontFamily: 'Questrial, sans-serif', marginRight: '20px', color: '#000' }}
+          >
+            PREMIERED:
+          </span>
           {show.premiered}
         </p>
         <p>
-          UPDATED:
-          {show.updated}
+          <span
+            style={{ fontFamily: 'Questrial, sans-serif', marginRight: '20px', color: '#000' }}
+          >
+            RUNTIME:
+          </span>
+          {show.runtime}
         </p>
         <p>
-          RATING:
+          <span
+            style={{ fontFamily: 'Questrial, sans-serif', marginRight: '20px', color: '#000' }}
+          >
+            RATING:
+          </span>
+
           {show.rating.average}
         </p>
         <p>
-          SCHEDULE:
-          {' '}
+          <span
+            style={{ fontFamily: 'Questrial, sans-serif', marginRight: '20px', color: '#000' }}
+          >
+            SCHEDULE:
+          </span>
           {show.schedule.days[0]}
           {' '}
           {show.schedule.time}
