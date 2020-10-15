@@ -50,6 +50,7 @@ class MainPage extends Component {
     return (
       <div className="mainpage">
         <div className="row">
+         { console.log('MainPage -> render -> fetchedShows', fetchedShows)}
           {error && <span className="show-list-error">{error}</span>}
           <CardList fetchedShows={fetchedShows} />
         </div>
