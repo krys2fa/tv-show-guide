@@ -16,7 +16,7 @@ class MainPage extends Component {
     this.shouldComponentRender = this.shouldComponentRender.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const { fetchShows } = this.props;
     fetchShows();
   }
