@@ -38,7 +38,7 @@ const CardList = ({ params }) => {
   return (
     <div className="row">
       <div className="col s12">
-        { getShows() }
+        {getShows()}
       </div>
     </div>
   );

@@ -10,8 +10,7 @@ const Navbar = () => (
         fontSize: '40px',
         fontWeight: 'bold',
         fontFamily: 'Dancing Script, cursive',
-      }}
-    >
+      }}>
       Cars Show Guide
     </NavLink>
   </nav>

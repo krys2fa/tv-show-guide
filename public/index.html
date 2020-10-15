@@ -43,5 +43,17 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <script src="https://kit.fontawesome.com/3a88e55698.js" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+   <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/js/materialize.min.js"></script>
+
+<script>
+(function($){
+  $(function(){
+    // Plugin initialization
+    $('select').not('.disabled').formSelect();
+  });
+})(jQuery); // end of jQuery name space
+</script>
   </body>
 </html>

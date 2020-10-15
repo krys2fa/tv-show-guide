@@ -7,12 +7,18 @@ import { bindActionCreators } from 'redux';
 import Loader from 'react-loader-spinner';
 import PropTypes from 'prop-types';
 import CardList from '../../components/CardList/CardList';
+
 import { fetchShowsStartAsync } from '../../store/actions/showActions';
 
 class MainPage extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      filter: 'All',
+    };
+
+    this.showFilter = this.showFilter.bind(this);
     this.shouldComponentRender = this.shouldComponentRender.bind(this);
   }
 
@@ -27,16 +33,39 @@ class MainPage extends Component {
     return true;
   }
 
+  showFilter(event) {
+    this.setState({ filter: event.target.value });
+  }
+
   render() {
     const { shows, error } = this.props;
     const fetchedShows = shows.shows;
     console.log('MainPage -> render -> fetchedShows', fetchedShows);
 
-    const genres = ['Documentary', 'Reality', 'Scripted', 'Talk Show'];
-    const filter = 'Talk Show';
+    const categories = [
+      'All',
+      'Documentary',
+      'Reality',
+      'Scripted',
+      'Talk Show',
+    ];
+
+    const getCategories = () => {
+      const result = [];
+      for (let i = 0; i < categories.length; i += 1) {
+        result.push(
+          <option key={categories[i]} value={categories[i]}>
+            {categories[i]}
+          </option>,
+        );
+      }
+      return result;
+    };
+
+    const { filter } = this.state;
     const params = {
-      fetchedShows: fetchedShows,
-      filter: filter,
+      fetchedShows,
+      filter,
     };
     console.log('MainPage -> render -> params', params);
 
@@ -49,7 +78,8 @@ class MainPage extends Component {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-          }}>
+          }}
+        >
           <Loader type="ThreeDots" color="#2BAD60" height="100" width="100" />
         </div>
       );
@@ -58,6 +88,26 @@ class MainPage extends Component {
     return (
       <div className="mainpage">
         <div className="row">
+          <div className="input-field col s12">
+            <select
+              style={{
+                marginTop: '25px',
+                width: '70vw',
+                height: '200px',
+                borderWidth: '1px',
+                fontSize: '25px',
+                marginBottom: '25px',
+              }}
+              onChange={this.showFilter}
+              name="categories"
+              id="categories"
+              defaultValue="All"
+            >
+              {getCategories()}
+            </select>
+            <label> Select Type of Show</label>
+          </div>
+
           {error && <span className="show-list-error">{error}</span>}
           <CardList params={params} />
         </div>
@@ -73,18 +123,17 @@ MainPage.propTypes = {
   shows: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   shows: state.shows,
   pending: state.pending,
   error: state.error,
 });
 
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(
-    {
-      fetchShows: fetchShowsStartAsync,
-    },
-    dispatch
-  );
+const mapDispatchToProps = dispatch => bindActionCreators(
+  {
+    fetchShows: fetchShowsStartAsync,
+  },
+  dispatch,
+);
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainPage);
