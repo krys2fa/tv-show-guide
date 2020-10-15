@@ -4,20 +4,21 @@ import { connect } from 'react-redux';
 const CardDetails = props => {
   const { id } = props.match.params;
   const { shows } = props;
+  // console.log('shows', shows);
   let singleShow = null;
   shows.map(show => {
-    if (show.show.id === parseInt(id)) {
+    if (show.show.id === parseInt(id, 10)) {
       singleShow = show.show;
-      console.log('singleShow', singleShow);
     }
+    return true;
   });
 
-	if (singleShow != null) {
-		localStorage.clear();
-		localStorage.setItem('singleShow', JSON.stringify(singleShow));
-	}
+  if (singleShow != null) {
+    localStorage.clear();
+    localStorage.setItem('singleShow', JSON.stringify(singleShow));
+  }
 
-	singleShow = JSON.parse(localStorage.getItem('singleShow'));
+  singleShow = JSON.parse(localStorage.getItem('singleShow'));
 
   return (
     <div className="container section">
@@ -31,62 +32,37 @@ const CardDetails = props => {
           </span>
           <div className="card-image">
             <img
-              src={
-								singleShow.image && singleShow.image.medium
-								  ? singleShow.image.medium
-								  : ''
-							}
+              src={singleShow.image && singleShow.image.medium ? singleShow.image.medium : ''}
               alt=""
             />
             <span className="card-title">{}</span>
           </div>
           <p
-            style={{
-						  fontFamily: 'Questrial, sans-serif',
-						  marginRight: '20px',
-						  color: '#000',
-            }}
+            style={{ fontFamily: 'Questrial, sans-serif', marginRight: '20px', color: '#000' }}
           >
             TYPE:
             {singleShow.type}
           </p>
           <p
-            style={{
-						  fontFamily: 'Questrial, sans-serif',
-						  marginRight: '20px',
-						  color: '#000',
-            }}
+            style={{ fontFamily: 'Questrial, sans-serif', marginRight: '20px', color: '#000' }}
           >
             STATUS:
             {singleShow.status}
           </p>
           <p
-            style={{
-						  fontFamily: 'Questrial, sans-serif',
-						  marginRight: '20px',
-						  color: '#000',
-            }}
+            style={{ fontFamily: 'Questrial, sans-serif', marginRight: '20px', color: '#000' }}
           >
             PREMIERED:
             {singleShow.premiered}
           </p>
           <p
-            style={{
-						  fontFamily: 'Questrial, sans-serif',
-						  marginRight: '20px',
-						  color: '#000',
-            }}
+            style={{ fontFamily: 'Questrial, sans-serif', marginRight: '20px', color: '#000' }}
           >
             SUMMARY:
             {singleShow.summary}
           </p>
           <p>
-            <span style={{
-						  fontFamily: 'Questrial, sans-serif',
-						  marginRight: '20px',
-						  color: '#000',
-            }}
-            >
+            <span style={{ fontFamily: 'Questrial, sans-serif', marginRight: '20px', color: '#000' }}>
               RATING:
             </span>
             {singleShow.rating.average}
@@ -95,11 +71,7 @@ const CardDetails = props => {
 
         <div className="card-action grey lighten-4 grey-text">
           <div
-            style={{
-						  fontFamily: 'Questrial, sans-serif',
-						  marginRight: '20px',
-						  color: '#000',
-            }}
+            style={{ fontFamily: 'Questrial, sans-serif', marginRight: '20px', color: '#000' }}
           >
             SCHEDULE:
             {' '}
@@ -113,11 +85,23 @@ const CardDetails = props => {
   );
 };
 
-const mapStateToProps = (state) => {
-  console.log('mapStateToProps -> state', state.shows.shows);
-  return {
-    shows: state.shows.shows,
-  };
-};
+// CardDetails.propTypes = {
+//   shows: propTypes.arrayOf(
+//     PropTypes.shape({
+//       show: PropTypes.objectOf(PropTypes.shape({
+// 				id: PropTypes.string.isRequired,
+// 			})),
+//     }),
+//   ),
+//   match: PropTypes.shape({
+//     params: PropTypes.shape({
+//       id: PropTypes.string.isRequired,
+//     }),
+//   }),
+// };
+
+const mapStateToProps = state => ({
+  shows: state.shows.shows,
+});
 
 export default connect(mapStateToProps)(CardDetails);

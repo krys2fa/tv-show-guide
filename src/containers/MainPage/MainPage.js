@@ -30,6 +30,15 @@ class MainPage extends Component {
   render() {
     const { shows, error } = this.props;
     const fetchedShows = shows.shows;
+    console.log('MainPage -> render -> fetchedShows', fetchedShows);
+
+    const genres = ['Documentary', 'Reality', 'Scripted', 'Talk Show'];
+    const filter = 'Talk Show';
+    const params = {
+      fetchedShows: fetchedShows,
+      filter: filter,
+    };
+    console.log('MainPage -> render -> params', params);
 
     if (!this.shouldComponentRender()) {
       return (
@@ -40,8 +49,7 @@ class MainPage extends Component {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-          }}
-        >
+          }}>
           <Loader type="ThreeDots" color="#2BAD60" height="100" width="100" />
         </div>
       );
@@ -50,9 +58,8 @@ class MainPage extends Component {
     return (
       <div className="mainpage">
         <div className="row">
-         { console.log('MainPage -> render -> fetchedShows', fetchedShows)}
           {error && <span className="show-list-error">{error}</span>}
-          <CardList fetchedShows={fetchedShows} />
+          <CardList params={params} />
         </div>
       </div>
     );
@@ -66,17 +73,18 @@ MainPage.propTypes = {
   shows: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   shows: state.shows,
   pending: state.pending,
   error: state.error,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    fetchShows: fetchShowsStartAsync,
-  },
-  dispatch,
-);
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(
+    {
+      fetchShows: fetchShowsStartAsync,
+    },
+    dispatch
+  );
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainPage);
