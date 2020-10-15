@@ -1,15 +1,28 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 const CardDetails = props => {
-  // console.log(props);
-  const { id, name } = props.match.params;
+console.log('props', props);
+  const { id } = props.match.params;
+  console.log('id from props', id);
+  const { shows } = props;
+  const currentShow = shows.shows;
+  currentShow.map(show => {
+    if (show.id == parseInt(id)) {
+    console.log('thisShowing sfsdfsfsdfdsfsdfsdfs', show);
+    }
+    // console.log('thisShow2', show);
+    console.log('id type',typeof parseInt(id));
+    console.log('show id type', typeof show.id);
+  });
+
   return (
     <div className="container section">
       <div className="card z-depth-0">
         <div className="card-content">
           <span className="card-title">
             Show Title -
-            {id}
+            {/* {id} */}
           </span>
           <p>Lorem Ipsum</p>
           <div className="card-image">
@@ -17,7 +30,7 @@ const CardDetails = props => {
               src="http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg"
               alt=""
             />
-            <span className="card-title">{name}</span>
+            <span className="card-title">{}</span>
           </div>
           {/* <p>{show.type}</p>
 					<p>{show.status}</p>
@@ -44,4 +57,12 @@ const CardDetails = props => {
   );
 };
 
-export default CardDetails;
+
+const mapStateToProps = (state, ownProps) => {
+	const { id } = ownProps.match.params;
+	return {
+		shows: state.shows,
+	};
+};
+
+export default connect(mapStateToProps)(CardDetails);

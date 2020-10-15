@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/no-deprecated */
 import React, { Component } from 'react';
@@ -59,8 +60,8 @@ class MainPage extends Component {
 
 MainPage.propTypes = {
   fetchShows: PropTypes.func.isRequired,
-  pending: PropTypes.string.isRequired,
-  error: PropTypes.string.isRequired,
+  pending: PropTypes.bool,
+  error: PropTypes.string,
   shows: PropTypes.object.isRequired,
 };
 

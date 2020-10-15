@@ -1,5 +1,7 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Card from '../Card/Card';
 
 const CardList = ({ fetchedShows }) => (
@@ -17,5 +19,9 @@ const CardList = ({ fetchedShows }) => (
     </div>
   </div>
 );
+
+Card.propTypes = {
+  fetchedShows: PropTypes.arrayOf(PropTypes.object),
+};
 
 export default CardList;

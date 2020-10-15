@@ -15,7 +15,7 @@ export const fetchShowsFailure = error => ({
 });
 
 export const fetchShowsStartAsync = () => dispatch => {
-  const apiUrl = 'http://api.tvmaze.com/search/shows?q=girls';
+  const apiUrl = 'http://api.tvmaze.com/schedule?country=US&date=2014-12-01';
   dispatch(fetchShowsStart());
   fetch(apiUrl)
     .then(res => res.json())
