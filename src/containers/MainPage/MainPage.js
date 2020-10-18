@@ -105,7 +105,7 @@ class MainPage extends Component {
             >
               {getCategories()}
             </select>
-            <label> Select Type of Show</label>
+            <label htmlFor="categories"> Select Type of Show</label>
           </div>
 
           {error && <span className="show-list-error">{error}</span>}

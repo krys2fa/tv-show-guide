@@ -6,7 +6,7 @@ const Card = ({ show }) => (
     <div className="card">
       <div className="card-image">
         <img
-          src={ show.image && show.image.medium ? show.image.medium : 'http://static.tvmaze.com/uploads/images/medium_portrait/203/509996.jpg' }
+          src={show.image && show.image.medium ? show.image.medium : 'http://static.tvmaze.com/uploads/images/medium_portrait/203/509996.jpg'}
           alt=""
         />
       </div>
@@ -53,20 +53,10 @@ const Card = ({ show }) => (
           <span
             style={{ fontFamily: 'Questrial, sans-serif', marginRight: '20px', color: '#000' }}
           >
-            RATING:
+            LANGUAGE:
           </span>
 
-          {show.rating.average}
-        </p>
-        <p>
-          <span
-            style={{ fontFamily: 'Questrial, sans-serif', marginRight: '20px', color: '#000' }}
-          >
-            SCHEDULE:
-          </span>
-          {show.schedule.days[0]}
-          {' '}
-          {show.schedule.time}
+          {show.language}
         </p>
       </div>
     </div>
@@ -74,7 +64,14 @@ const Card = ({ show }) => (
 );
 
 Card.propTypes = {
-  show: PropTypes.arrayOf(PropTypes.object).isRequired,
+  show: PropTypes.shape({
+    name: PropTypes.string,
+    runtime: PropTypes.number,
+    premiered: PropTypes.string,
+    status: PropTypes.string,
+    type: PropTypes.string,
+    language: PropTypes.string,
+  }).isRequired,
 };
 
 export default Card;
