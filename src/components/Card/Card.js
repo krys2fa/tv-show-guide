@@ -71,6 +71,7 @@ Card.propTypes = {
     status: PropTypes.string,
     type: PropTypes.string,
     language: PropTypes.string,
+    image: PropTypes.shape({ medium: PropTypes.string }),
   }).isRequired,
 };
 
