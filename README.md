@@ -1,5 +1,5 @@
  # Car Show Guide
-A front-end React application for viewing car tv shows and their details.
+A front-end React application for viewing car tv shows and their details. The data for the shows were obtained from [TV Maze API](https://www.tvmaze.com/api) using the fetch API and stored in the Redux store to be accessed by multiple components. There is also a filter feature for filtering car shows.
 This project was set up with [Create React App](https://github.com/facebook/create-react-app).
 
 # Screenshot
@@ -11,6 +11,7 @@ This project was set up with [Create React App](https://github.com/facebook/crea
 - create-react-app tool.
 - Redux.
 - Materialize.
+- [TV Maze API](https://www.tvmaze.com/api).
 
 ## Live Video Presentation.
 
