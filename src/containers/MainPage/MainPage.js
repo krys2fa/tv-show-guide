@@ -17,7 +17,6 @@ class MainPage extends Component {
     };
 
     this.showFilter = this.showFilter.bind(this);
-    this.shouldComponentRender = this.shouldComponentRender.bind(this);
   }
 
   componentDidMount() {
