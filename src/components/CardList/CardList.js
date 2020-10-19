@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Card from '../Card/Card';
 
 const CardList = ({ params }) => {
-  console.log('CardList -> params', params);
+  // console.log('CardList -> params', params);
   const getShows = () => {
     const result = [];
     if (params.filter === 'All') {
@@ -31,7 +31,7 @@ const CardList = ({ params }) => {
           </Link>,
         ));
     }
-    console.log('getShows -> result', result);
+    // console.log('getShows -> result', result);
     return result;
   };
 

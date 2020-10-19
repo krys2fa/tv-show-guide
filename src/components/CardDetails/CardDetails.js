@@ -1,10 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 const CardDetails = props => {
-  const { id } = props.match.params;
-  const { shows } = props;
-  // console.log('shows', shows);
+  console.log('props', props);
+  // const { id } = props.match.params;
+  // const { shows } = props;
+  const { match, shows } = props;
+  const id = match.params;
+  console.log('shows', shows);
   let singleShow = null;
   shows.map(show => {
     if (show.show.id === parseInt(id, 10)) {
@@ -85,20 +89,15 @@ const CardDetails = props => {
   );
 };
 
-// CardDetails.propTypes = {
-//   shows: propTypes.arrayOf(
-//     PropTypes.shape({
-//       show: PropTypes.objectOf(PropTypes.shape({
-// 				id: PropTypes.string.isRequired,
-// 			})),
-//     }),
-//   ),
-//   match: PropTypes.shape({
-//     params: PropTypes.shape({
-//       id: PropTypes.string.isRequired,
-//     }),
-//   }),
-// };
+CardDetails.propTypes = {
+  shows: PropTypes.arrayOf(PropTypes.object).isRequired,
+  match: PropTypes.shape({
+    path: PropTypes.string,
+    url: PropTypes.string,
+    params: PropTypes.shape({ id: PropTypes.string }),
+    isExact: PropTypes.bool,
+  }).isRequired,
+};
 
 const mapStateToProps = state => ({
   shows: state.shows.shows,
