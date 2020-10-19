@@ -1,7 +1,6 @@
 import showReducer from '../store/reducers/showReducer';
 import ShowActionTypes from '../store/types/showTypes';
 
-
 describe('shows reducer', () => {
   it('should return the initial state', () => {
     expect(showReducer(undefined, {})).toEqual({
@@ -21,10 +20,20 @@ describe('shows reducer', () => {
     });
   });
 
-  it('should handle FETCH_JOBS_SUCCESS', () => {
+  it('should handle FETCH_SHOWS_SUCCESS', () => {
     expect(
       showReducer([], {
-        type: 'FETCH_SHOWS_SUCCESS',
+        type: ShowActionTypes.FETCH_SHOWS_SUCCESS,
+      }),
+    ).toEqual({
+      pending: false,
+    });
+  });
+
+  it('should handle FETCH_SHOWS_FAILURE', () => {
+    expect(
+      showReducer([], {
+        type: ShowActionTypes.FETCH_SHOWS_FAILURE,
       }),
     ).toEqual({
       pending: false,
