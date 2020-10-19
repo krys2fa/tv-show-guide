@@ -1,11 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => (
   <nav>
-    <NavLink
+    <Link
       to="/"
-      activeStyle={{
+      style={{
         marginLeft: '50px',
         fontSize: '40px',
         fontWeight: 'bold',
@@ -13,7 +13,7 @@ const Navbar = () => (
       }}
     >
       Cars Show Guide
-    </NavLink>
+    </Link>
   </nav>
 );
 

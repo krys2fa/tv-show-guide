@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Loader from 'react-loader-spinner';
 import PropTypes from 'prop-types';
+import Navbar from '../../components/NavBar/NavBar';
 import CardList from '../../components/CardList/CardList';
 
 import { fetchShowsStartAsync } from '../../store/actions/showActions';
@@ -86,7 +87,9 @@ class MainPage extends Component {
     }
 
     return (
+
       <div className="mainpage">
+        <Navbar />
         <div className="row">
           <div className="input-field col s12">
             <select

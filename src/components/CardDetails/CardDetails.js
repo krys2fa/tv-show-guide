@@ -3,12 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 const CardDetails = props => {
-  console.log('props', props);
-  // const { id } = props.match.params;
-  // const { shows } = props;
   const { match, shows } = props;
   const id = match.params;
-  console.log('shows', shows);
   let singleShow = null;
   shows.map(show => {
     if (show.show.id === parseInt(id, 10)) {
