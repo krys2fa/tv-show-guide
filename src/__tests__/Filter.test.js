@@ -1,12 +1,12 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import CardList from '../components/CardList/CardList';
+import Filter from '../components/Filter/Filter';
 
-it('renders the CardList component correctly', () => {
+it('renders the Filter component correctly', () => {
   const params = {
     fetchedShows: [],
     filter: 'All',
   };
-  const { asFragment } = render(<CardList params={params} />);
+  const { asFragment } = render(<Filter params={params} />);
   expect(asFragment()).toMatchSnapshot();
 });

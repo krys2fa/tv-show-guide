@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import Navbar from '../../components/NavBar/NavBar';
-import CardList from '../../components/CardList/CardList';
+import Filter from '../../components/Filter/Filter';
 
 import { fetchShowsStartAsync } from '../../store/actions/showActions';
 
@@ -83,7 +83,7 @@ class MainPage extends Component {
           </div>
 
           {error && <span className="show-list-error">{error}</span>}
-          <CardList params={params} />
+          <Filter params={params} />
         </div>
       </div>
     );

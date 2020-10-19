@@ -1,11 +1,9 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Card from '../Card/Card';
 
-const CardList = ({ params }) => {
-  // console.log('CardList -> params', params);
+const Filter = ({ params }) => {
   const getShows = () => {
     const result = [];
     if (params.filter === 'All') {
@@ -31,7 +29,6 @@ const CardList = ({ params }) => {
           </Link>,
         ));
     }
-    // console.log('getShows -> result', result);
     return result;
   };
 
@@ -44,8 +41,17 @@ const CardList = ({ params }) => {
   );
 };
 
-Card.propTypes = {
+Filter.propTypes = {
   fetchedShows: PropTypes.arrayOf(PropTypes.object),
+  params: PropTypes.shape({
+    fetchedShows: PropTypes.arrayOf(PropTypes.object),
+    filter: PropTypes.string,
+  }),
 };
 
-export default CardList;
+Filter.defaultProps = {
+  fetchedShows: [],
+  params: {},
+};
+
+export default Filter;
