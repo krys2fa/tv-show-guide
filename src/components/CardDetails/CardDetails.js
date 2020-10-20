@@ -5,15 +5,15 @@ import PropTypes from 'prop-types';
 const CardDetails = props => {
   const { match, shows } = props;
   const id = match.params;
-  let singleShow = null;
+  let singleShow;
   shows.map(show => {
-    if (show.show.id === parseInt(id, 10)) {
+    if (show.show.id === parseInt(id.id, 10)) {
       singleShow = show.show;
     }
     return true;
   });
 
-  if (singleShow != null) {
+  if (singleShow) {
     localStorage.clear();
     localStorage.setItem('singleShow', JSON.stringify(singleShow));
   }
