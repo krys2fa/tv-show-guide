@@ -15,7 +15,7 @@ This project was set up with [Create React App](https://github.com/facebook/crea
 
 ## Live Video Presentation.
 
-Click [here]() to watch a video presentation of the web app.
+Click [here](https://www.loom.com/share/fe8f776740d0414cada1de31b3496186) to watch a video presentation of the web app.
 
 ## Live Demo
 
