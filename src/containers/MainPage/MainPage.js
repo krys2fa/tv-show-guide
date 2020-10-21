@@ -65,12 +65,13 @@ class MainPage extends Component {
           <div className="input-field col s12">
             <select
               style={{
-                marginTop: '25px',
-                width: '70vw',
-                height: '200px',
+                class: 'browser-default',
+                display: 'block',
+                marginTop: '40px',
                 borderWidth: '1px',
-                fontSize: '25px',
+                fontSize: '15px',
                 marginBottom: '25px',
+                borderRadius: '10px',
               }}
               onChange={this.showFilter}
               name="categories"
