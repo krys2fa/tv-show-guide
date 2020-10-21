@@ -3,91 +3,108 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import NavBar from '../../components/NavBar/NavBar';
 
-const CardDetails = props => {
-  const { match, shows } = props;
-  console.log('shows', shows);
-  const id = match.params;
-  let singleShow;
-  shows.map(show => {
-    if (show.show.id === parseInt(id.id, 10)) {
-      singleShow = show.show;
-    }
-    return true;
-  });
+class CardDetails extends React.Component {
+  constructor(props) {
+    super(props);
 
-  if (singleShow) {
-    localStorage.clear();
-    localStorage.setItem('singleShow', JSON.stringify(singleShow));
+    const { match, shows } = this.props;
+    console.log('shows', shows);
+    const id = match.params;
+    const singleShow = shows && shows.filter(
+      show => show.show.id === parseInt(id.id, 10),
+    )[0].show;
+    this.state = { show: singleShow };
   }
 
-  singleShow = JSON.parse(localStorage.getItem('singleShow'));
-
-  return (
-    <div className="container section">
-      <NavBar />
-      <div className="card z-depth-0">
-        <div className="card-content">
-          <span
-            className="card-title"
-            style={{ fontFamily: 'Dancing Script, cursive', color: '#000', textAlign: 'center' }}
-          >
-            {singleShow.name}
-          </span>
-          <div className="">
-            <img
-              // style={{ width: '0px' }}
-              src={singleShow.image && singleShow.image.medium ? singleShow.image.medium : ''}
-              alt=""
-            />
-            <span className="card-title">{}</span>
-          </div>
-          <p
-            style={{ fontFamily: 'Questrial, sans-serif', marginRight: '20px', color: '#000' }}
-          >
-            TYPE:
-            {singleShow.type}
-          </p>
-          <p
-            style={{ fontFamily: 'Questrial, sans-serif', marginRight: '20px', color: '#000' }}
-          >
-            STATUS:
-            {singleShow.status}
-          </p>
-          <p
-            style={{ fontFamily: 'Questrial, sans-serif', marginRight: '20px', color: '#000' }}
-          >
-            PREMIERED:
-            {singleShow.premiered}
-          </p>
-          <p
-            style={{ fontFamily: 'Questrial, sans-serif', marginRight: '20px', color: '#000' }}
-          >
-            SUMMARY:
-            {singleShow.summary}
-          </p>
-          <p>
-            <span style={{ fontFamily: 'Questrial, sans-serif', marginRight: '20px', color: '#000' }}>
-              RATING:
+  render() {
+    const { show } = this.state;
+    console.log('CardDetails -> render -> show', show);
+    return (
+      <div className="container section">
+        <NavBar />
+        <div className="card z-depth-0">
+          <div className="card-content">
+            <span
+              className="card-title"
+              style={{
+                fontFamily: 'Dancing Script, cursive',
+                color: '#000',
+                textAlign: 'center',
+              }}>
+              {show && show.name}
             </span>
-            {singleShow.rating.average}
-          </p>
-        </div>
+            <div className="">
+              <img
+                src={show && show.image.medium ? show.image.medium : ''}
+                alt=""
+              />
+              <span className="card-title">{}</span>
+            </div>
+            <p
+              style={{
+                fontFamily: 'Questrial, sans-serif',
+                marginRight: '20px',
+                color: '#000',
+              }}>
+              TYPE:
+              {show && show.type}
+            </p>
+            <p
+              style={{
+                fontFamily: 'Questrial, sans-serif',
+                marginRight: '20px',
+                color: '#000',
+              }}>
+              STATUS:
+              {show && show.status}
+            </p>
+            <p
+              style={{
+                fontFamily: 'Questrial, sans-serif',
+                marginRight: '20px',
+                color: '#000',
+              }}>
+              PREMIERED:
+              {show && show.premiered}
+            </p>
+            <p
+              style={{
+                fontFamily: 'Questrial, sans-serif',
+                marginRight: '20px',
+                color: '#000',
+              }}>
+              SUMMARY:
+              {show && show.summary}
+            </p>
+            <p>
+              <span
+                style={{
+                  fontFamily: 'Questrial, sans-serif',
+                  marginRight: '20px',
+                  color: '#000',
+                }}>
+                RATING:
+              </span>
+              {show && show.rating.average}
+            </p>
+          </div>
 
-        <div className="card-action grey lighten-4 grey-text">
-          <div
-            style={{ fontFamily: 'Questrial, sans-serif', marginRight: '20px', color: '#000' }}
-          >
-            SCHEDULE:
-            {' '}
-            {singleShow.schedule.time}
-            {' '}
-            {singleShow.schedule.days[0]}
+          <div className="card-action grey lighten-4 grey-text">
+            <div
+              style={{
+                fontFamily: 'Questrial, sans-serif',
+                marginRight: '20px',
+                color: '#000',
+              }}>
+              SCHEDULE: {show && show.schedule.time}{' '}
+              {show && show.schedule.days[0]}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 CardDetails.propTypes = {
   shows: PropTypes.arrayOf(PropTypes.object).isRequired,
