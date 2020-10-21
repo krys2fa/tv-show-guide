@@ -8,7 +8,6 @@ class CardDetails extends React.Component {
     super(props);
 
     const { match, shows } = this.props;
-    console.log('shows', shows);
     const id = match.params;
     const singleShow = shows && shows.filter(
       show => show.show.id === parseInt(id.id, 10),
@@ -18,7 +17,6 @@ class CardDetails extends React.Component {
 
   render() {
     const { show } = this.state;
-    console.log('CardDetails -> render -> show', show);
     return (
       <div className="container section">
         <NavBar />
@@ -30,7 +28,8 @@ class CardDetails extends React.Component {
                 fontFamily: 'Dancing Script, cursive',
                 color: '#000',
                 textAlign: 'center',
-              }}>
+              }}
+            >
               {show && show.name}
             </span>
             <div className="">
@@ -45,7 +44,8 @@ class CardDetails extends React.Component {
                 fontFamily: 'Questrial, sans-serif',
                 marginRight: '20px',
                 color: '#000',
-              }}>
+              }}
+            >
               TYPE:
               {show && show.type}
             </p>
@@ -54,7 +54,8 @@ class CardDetails extends React.Component {
                 fontFamily: 'Questrial, sans-serif',
                 marginRight: '20px',
                 color: '#000',
-              }}>
+              }}
+            >
               STATUS:
               {show && show.status}
             </p>
@@ -63,7 +64,8 @@ class CardDetails extends React.Component {
                 fontFamily: 'Questrial, sans-serif',
                 marginRight: '20px',
                 color: '#000',
-              }}>
+              }}
+            >
               PREMIERED:
               {show && show.premiered}
             </p>
@@ -72,7 +74,8 @@ class CardDetails extends React.Component {
                 fontFamily: 'Questrial, sans-serif',
                 marginRight: '20px',
                 color: '#000',
-              }}>
+              }}
+            >
               SUMMARY:
               {show && show.summary}
             </p>
@@ -82,7 +85,8 @@ class CardDetails extends React.Component {
                   fontFamily: 'Questrial, sans-serif',
                   marginRight: '20px',
                   color: '#000',
-                }}>
+                }}
+              >
                 RATING:
               </span>
               {show && show.rating.average}
@@ -95,8 +99,12 @@ class CardDetails extends React.Component {
                 fontFamily: 'Questrial, sans-serif',
                 marginRight: '20px',
                 color: '#000',
-              }}>
-              SCHEDULE: {show && show.schedule.time}{' '}
+              }}
+            >
+              SCHEDULE:
+              {' '}
+              {show && show.schedule.time}
+              {' '}
               {show && show.schedule.days[0]}
             </div>
           </div>

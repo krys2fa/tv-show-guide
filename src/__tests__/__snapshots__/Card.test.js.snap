@@ -9,11 +9,12 @@ exports[`renders the Card component correctly 1`] = `
       class="card"
     >
       <div
-        class="card-image"
+        class=""
       >
         <img
           alt=""
           src="http://static.tvmaze.com/uploads/images/medium_portrait/203/509996.jpg"
+          style="margin: 0px 120px;"
         />
       </div>
       <div
@@ -21,7 +22,7 @@ exports[`renders the Card component correctly 1`] = `
       >
         <span
           class="card-title"
-          style="font-family: Dancing Script, cursive; color: rgb(0, 0, 0);"
+          style="font-family: Dancing Script, cursive; color: rgb(0, 0, 0); text-align: center;"
         >
           test
         </span>

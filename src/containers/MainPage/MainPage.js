@@ -31,7 +31,6 @@ class MainPage extends Component {
   render() {
     const { shows, error } = this.props;
     const fetchedShows = shows.shows;
-
     const categories = [
       'All',
       'Documentary',
