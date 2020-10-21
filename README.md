@@ -36,6 +36,10 @@ To get a local copy up and running follow these simple example steps.
 - Run `npm install` to install dependencies.
 - Run `npm start` to start the development server.
 
+### Testing
+To run tests,
+- Run `npm test` in the project directory in your terminal/command line.
+
 ## Author
 
 👤 **Christopher Amanor**
