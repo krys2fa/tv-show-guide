@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import MainPage from './containers/MainPage/MainPage';
-import CardDetails from './components/CardDetails/CardDetails';
+import CardDetails from './containers/CardDetails/CardDetails';
 
 const App = () => (
   <div className="">

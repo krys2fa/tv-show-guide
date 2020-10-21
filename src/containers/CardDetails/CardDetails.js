@@ -1,9 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import NavBar from '../../components/NavBar/NavBar';
 
 const CardDetails = props => {
   const { match, shows } = props;
+  console.log('shows', shows);
   const id = match.params;
   let singleShow;
   shows.map(show => {
@@ -22,16 +24,18 @@ const CardDetails = props => {
 
   return (
     <div className="container section">
+      <NavBar />
       <div className="card z-depth-0">
         <div className="card-content">
           <span
             className="card-title"
-            style={{ fontFamily: 'Dancing Script, cursive', color: '#000' }}
+            style={{ fontFamily: 'Dancing Script, cursive', color: '#000', textAlign: 'center' }}
           >
             {singleShow.name}
           </span>
-          <div className="card-image">
+          <div className="">
             <img
+              // style={{ width: '0px' }}
               src={singleShow.image && singleShow.image.medium ? singleShow.image.medium : ''}
               alt=""
             />
