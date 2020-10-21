@@ -22,7 +22,8 @@ const Card = ({ show }) => (
             fontFamily: 'Dancing Script, cursive',
             color: '#000',
             textAlign: 'center',
-          }}>
+          }}
+        >
           {show.name}
         </span>
         <p>
@@ -31,7 +32,8 @@ const Card = ({ show }) => (
               fontFamily: 'Questrial, sans-serif',
               marginRight: '20px',
               color: '#000',
-            }}>
+            }}
+          >
             TYPE:
           </span>
           {show.type}
@@ -42,7 +44,8 @@ const Card = ({ show }) => (
               fontFamily: 'Questrial, sans-serif',
               marginRight: '20px',
               color: '#000',
-            }}>
+            }}
+          >
             STATUS:
           </span>
           {show.status}
@@ -53,7 +56,8 @@ const Card = ({ show }) => (
               fontFamily: 'Questrial, sans-serif',
               marginRight: '20px',
               color: '#000',
-            }}>
+            }}
+          >
             PREMIERED:
           </span>
           {show.premiered}
@@ -64,7 +68,8 @@ const Card = ({ show }) => (
               fontFamily: 'Questrial, sans-serif',
               marginRight: '20px',
               color: '#000',
-            }}>
+            }}
+          >
             RUNTIME:
           </span>
           {show.runtime}
@@ -75,7 +80,8 @@ const Card = ({ show }) => (
               fontFamily: 'Questrial, sans-serif',
               marginRight: '20px',
               color: '#000',
-            }}>
+            }}
+          >
             LANGUAGE:
           </span>
 
