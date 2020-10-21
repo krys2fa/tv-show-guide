@@ -4,9 +4,8 @@ import PropTypes from 'prop-types';
 const Card = ({ show }) => (
   <div className="col s12 m4">
     <div className="card">
-      <div className="">
+      <div style={{ textAlign: 'center' }}>
         <img
-          style={{ margin: '0 120px' }}
           src={
             show.image && show.image.medium
               ? show.image.medium

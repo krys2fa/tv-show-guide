@@ -9,12 +9,11 @@ exports[`renders the Card component correctly 1`] = `
       class="card"
     >
       <div
-        class=""
+        style="text-align: center;"
       >
         <img
           alt=""
           src="http://static.tvmaze.com/uploads/images/medium_portrait/203/509996.jpg"
-          style="margin: 0px 120px;"
         />
       </div>
       <div

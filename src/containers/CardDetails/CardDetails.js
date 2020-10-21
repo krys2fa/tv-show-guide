@@ -32,7 +32,7 @@ class CardDetails extends React.Component {
             >
               {show && show.name}
             </span>
-            <div className="">
+            <div style={{ textAlign: 'center' }}>
               <img
                 src={show && show.image.medium ? show.image.medium : ''}
                 alt=""
