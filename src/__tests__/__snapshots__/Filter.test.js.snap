@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the Filter component correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="row"
+  >
+    <div
+      class="col s12"
+    />
+  </div>
+</DocumentFragment>
+`;

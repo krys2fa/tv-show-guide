@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the Card component correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="col s12 m4"
+  >
+    <div
+      class="card"
+    >
+      <div
+        style="text-align: center;"
+      >
+        <img
+          alt=""
+          src="http://static.tvmaze.com/uploads/images/medium_portrait/203/509996.jpg"
+        />
+      </div>
+      <div
+        class="card-content"
+      >
+        <span
+          class="card-title"
+          style="font-family: Dancing Script, cursive; color: rgb(0, 0, 0); text-align: center;"
+        >
+          test
+        </span>
+        <p>
+          <span
+            style="font-family: Questrial, sans-serif; margin-right: 20px; color: rgb(0, 0, 0);"
+          >
+            TYPE:
+          </span>
+        </p>
+        <p>
+          <span
+            style="font-family: Questrial, sans-serif; margin-right: 20px; color: rgb(0, 0, 0);"
+          >
+            STATUS:
+          </span>
+        </p>
+        <p>
+          <span
+            style="font-family: Questrial, sans-serif; margin-right: 20px; color: rgb(0, 0, 0);"
+          >
+            PREMIERED:
+          </span>
+        </p>
+        <p>
+          <span
+            style="font-family: Questrial, sans-serif; margin-right: 20px; color: rgb(0, 0, 0);"
+          >
+            RUNTIME:
+          </span>
+        </p>
+        <p>
+          <span
+            style="font-family: Questrial, sans-serif; margin-right: 20px; color: rgb(0, 0, 0);"
+          >
+            LANGUAGE:
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
